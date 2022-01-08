@@ -2,8 +2,8 @@ namespace TimeClock.Models
 {
     public class Employee 
     {
-        int Id { get; set; }
-        string LastName { get; set; }
-        string FirstName { get; set; }
+        public int Id { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
     }
 }
