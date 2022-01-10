@@ -9,7 +9,12 @@ namespace TimeClock.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        private readonly MockTimeClockRepo _repository = new MockTimeClockRepo();
+        private readonly ITimeClockRepo _repository;
+
+        public EmployeesController(ITimeClockRepo repository)
+        {
+            _repository = repository;
+        }
 
         [HttpGet]
         public ActionResult<IEnumerable<Employee>> GetAllEmployees()
