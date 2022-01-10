@@ -25,7 +25,7 @@ namespace TimeClock.Controllers
         {
             var employeeItems = _repository.GetEmployees();
 
-            return Ok(employeeItems);
+            return Ok(_mapper.Map<IEnumerable<EmployeeReadDto>>(employeeItems));
         }
 
         [HttpGet("{id}")]
