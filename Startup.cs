@@ -10,9 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using TimeClock.Data;
+using AutoMapper;
 
 namespace TimeClock
 {
@@ -31,9 +31,11 @@ namespace TimeClock
             services.AddDbContext<TimeClockContext>(options => options.UseSqlServer
             (Configuration.GetConnectionString("TimeClockConnection")));
 
-            services.AddScoped<ITimeClockRepo, SqlTimeClockRepo>();
-
             services.AddControllers();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddScoped<ITimeClockRepo, SqlTimeClockRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

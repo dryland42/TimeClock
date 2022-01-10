@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using TimeClock.Data;
+using TimeClock.Dtos;
 using TimeClock.Models;
 
 namespace TimeClock.Controllers
@@ -10,10 +12,12 @@ namespace TimeClock.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly ITimeClockRepo _repository;
+        private readonly IMapper _mapper;
 
-        public EmployeesController(ITimeClockRepo repository)
+        public EmployeesController(ITimeClockRepo repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -25,11 +29,14 @@ namespace TimeClock.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Employee> GetEmployeeById(int Id)
+        public ActionResult<EmployeeReadDto> GetEmployeeById(int Id)
         {
             var employeeItem = _repository.GetEmployeeById(Id);
-            
-            return Ok(employeeItem);
+            if(employeeItem != null)
+            {
+                return Ok(_mapper.Map<EmployeeReadDto>(employeeItem));
+            }
+            return NotFound();        
         }
     }
 }
