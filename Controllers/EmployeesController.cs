@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TimeClock.Data;
 using TimeClock.Dtos;
 using TimeClock.Models;
+using System.Linq;
 
 namespace TimeClock.Controllers
 {
@@ -13,9 +14,15 @@ namespace TimeClock.Controllers
     {
         private readonly ITimeClockRepo _repository;
         private readonly IMapper _mapper;
+        private readonly TimeClockContext _context;
 
-        public EmployeesController(ITimeClockRepo repository, IMapper mapper)
+        public EmployeesController(ITimeClockRepo repository, IMapper mapper, TimeClockContext context)
         {
+             _context = context;
+            if (_context.Employees.Count() == 0)
+            {
+                _context.Employees.Add(new Employee { FirstName = "Rylan", LastName = "Wassem" }); _context.SaveChanges();
+            }
             _repository = repository;
             _mapper = mapper;
         }
