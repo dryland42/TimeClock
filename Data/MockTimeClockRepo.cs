@@ -5,6 +5,11 @@ namespace TimeClock.Data
 {
     public class MockTimeClockRepo : ITimeClockRepo
     {
+        public void CreateEmployee(Employee emp)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public Employee GetEmployeeById(int Id)
         {
             return new Employee { Id=0, LastName="Stevens", FirstName="Bill" };
@@ -20,6 +25,11 @@ namespace TimeClock.Data
             };
 
             return Employees;
+        }
+
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

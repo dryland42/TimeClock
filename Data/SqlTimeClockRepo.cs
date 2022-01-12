@@ -13,6 +13,17 @@ namespace TimeClock.Data
         {
             _context = context;
         }
+
+        public void CreateEmployee(Employee emp)
+        {
+            if(emp == null)
+            {
+                throw new ArgumentNullException(nameof(emp));
+            }
+
+            _context.Add(emp);
+        }
+
         public Employee GetEmployeeById(int id)
         {
             return _context.Employees.FirstOrDefault(x => x.Id == id);
@@ -21,6 +32,11 @@ namespace TimeClock.Data
         public IEnumerable<Employee> GetEmployees()
         {
             return _context.Employees.ToList();
+        }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() > 0);
         }
     }
 }
