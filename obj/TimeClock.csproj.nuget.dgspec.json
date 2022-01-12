@@ -1,25 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dryla\\Documents\\Tutorial_Projects\\TimeClock\\TimeClock.csproj": {}
+    "C:\\Users\\Rylan\\Documents\\API_Tutorials\\TimeClock\\TimeClock.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dryla\\Documents\\Tutorial_Projects\\TimeClock\\TimeClock.csproj": {
+    "C:\\Users\\Rylan\\Documents\\API_Tutorials\\TimeClock\\TimeClock.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dryla\\Documents\\Tutorial_Projects\\TimeClock\\TimeClock.csproj",
+        "projectUniqueName": "C:\\Users\\Rylan\\Documents\\API_Tutorials\\TimeClock\\TimeClock.csproj",
         "projectName": "TimeClock",
-        "projectPath": "C:\\Users\\dryla\\Documents\\Tutorial_Projects\\TimeClock\\TimeClock.csproj",
-        "packagesPath": "C:\\Users\\dryla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dryla\\Documents\\Tutorial_Projects\\TimeClock\\obj\\",
+        "projectPath": "C:\\Users\\Rylan\\Documents\\API_Tutorials\\TimeClock\\TimeClock.csproj",
+        "packagesPath": "C:\\Users\\Rylan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rylan\\Documents\\API_Tutorials\\TimeClock\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\dryla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rylan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -66,9 +69,13 @@
               "target": "Package",
               "version": "[5.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
+              "target": "Package",
+              "version": "[1.1.0, )"
             }
           },
           "imports": [
@@ -89,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

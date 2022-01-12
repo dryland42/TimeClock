@@ -8,7 +8,9 @@ namespace TimeClock.Profiles
     {
         public EmployeesProfile()
         {
+            //Source -> Target
             CreateMap<Employee, EmployeeReadDto>();
+            CreateMap<EmployeeCreateDto, Employee>();
         }
     }
 }
